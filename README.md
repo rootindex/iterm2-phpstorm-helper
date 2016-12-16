@@ -1,8 +1,10 @@
 # iTerm2 PHPStorm Helper
 
 Simple and easy `CMD + Click` to open php files at the right line number :white_check_mark:
-This is a bash script to help iTerm2 translate php output line numbers correctly when opening in PHPStorm.
-Feel free to sent any improvements and changes my way.
+
+Bash script to help iTerm2 translate php stack traces + line numbers correctly when opening in PHPStorm.
+
+Feel free to sent any improvements and changes this way.
 
 ## Examples 
 
