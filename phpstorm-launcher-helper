@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+PHPSTORM_CLI_LAUNCHER=/usr/local/bin/phpstorm;
+
+if [ "$#" -eq 1 ]
+    then
+        "$PHPSTORM_CLI_LAUNCHER" "$1";
+fi
+
+if [ "$#" -eq 2 ]
+    then
+        REAL_LINE=$(echo -E "$2" | grep -o -E '[0-9]+' | head -1 | sed -e 's/^0\+//');
+
+        if [ "$REAL_LINE" -eq "$REAL_LINE" ] 2>/dev/null; then
+          "$PHPSTORM_CLI_LAUNCHER" -l "${REAL_LINE}" "$1";
+        else
+          "$PHPSTORM_CLI_LAUNCHER" -l 0 "$1";
+        fi
+fi
+
+if [ "$#" -eq 3 ]
+    then
+        "$PHPSTORM_CLI_LAUNCHER" -l "$2" "$1";
+fi
